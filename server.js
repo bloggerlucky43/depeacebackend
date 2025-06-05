@@ -13,7 +13,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5000",
-  "https://c408-102-89-83-10.ngrok-free.app ",
+  "https://depeaceacademy.onrender.com",
 ];
 const corsOptions = {
   origin: (origin, callback) => {
