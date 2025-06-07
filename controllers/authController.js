@@ -124,7 +124,7 @@ export const Login = async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "None",
-      maxAge: 60 * 60 * 1000,
+      maxAge: 3 * 60 * 60 * 1000,
     });
     return res.status(200).json({ message: "Login successful", user });
   } catch (error) {
@@ -136,7 +136,7 @@ export const Login = async (req, res) => {
 export const Logout = (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "strict",
+    sameSite: "None",
     secure: process.env.NODE_ENV === "production",
   });
   return res.status(200).json({ message: "Logged out successfully" });
