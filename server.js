@@ -13,17 +13,12 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5000",
+  "http://localhost:3000",
+  "https://de-peaceacademy.onrender.com",
   "https://depeaceacademy.onrender.com",
 ];
 const corsOptions = {
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: allowedOrigins,
   credentials: true, // Allow credentials (cookies, etc.)
 };
 
